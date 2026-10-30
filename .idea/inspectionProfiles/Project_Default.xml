@@ -1,0 +1,79 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownTarget" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="asgiref" />
+          <option value="black" />
+          <option value="click" />
+          <option value="colorama" />
+          <option value="cssbeautifier" />
+          <option value="django" />
+          <option value="django-debug-toolbar" />
+          <option value="djlint" />
+          <option value="editorconfig" />
+          <option value="iniconfig" />
+          <option value="jsbeautifier" />
+          <option value="json5" />
+          <option value="mypy-extensions" />
+          <option value="packaging" />
+          <option value="pathspec" />
+          <option value="platformdirs" />
+          <option value="pluggy" />
+          <option value="psycopg" />
+          <option value="psycopg-binary" />
+          <option value="psycopg-pool" />
+          <option value="pygments" />
+          <option value="pytest" />
+          <option value="python-decouple" />
+          <option value="pyyaml" />
+          <option value="regex" />
+          <option value="ruff" />
+          <option value="six" />
+          <option value="sqlparse" />
+          <option value="tqdm" />
+          <option value="typing-extensions" />
+          <option value="starlette" />
+          <option value="pydantic" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="id" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyStringConversionWithoutDunderMethodInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredTypes">
+        <list>
+          <option value="types.NoneType" />
+          <option value="_io.TextIOWrapper" />
+          <option value="str" />
+          <option value="int" />
+          <option value="float" />
+          <option value="complex" />
+          <option value="set" />
+          <option value="frozenset" />
+          <option value="bytes" />
+          <option value="bytearray" />
+          <option value="memoryview" />
+          <option value="slice" />
+          <option value="list" />
+          <option value="dict" />
+          <option value="bool" />
+          <option value="range" />
+          <option value="tuple" />
+          <option value="pathlib.PurePath" />
+          <option value="uuid.UUID" />
+          <option value="decimal.Decimal" />
+          <option value="fractions.Fraction" />
+          <option value="datetime.datetime" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
