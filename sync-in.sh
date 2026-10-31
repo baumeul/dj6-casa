@@ -78,16 +78,5 @@ echo "Datenbank erfolgreich wiederhergestellt."
 echo "Lokales Backup: $BACKUP_FILE"
 echo "=== IN abgeschlossen ==="
 
-
-#pg_restore \
-#    -U "$DB_USER" \
-#    -h "$DB_HOST" \
-#    -p "$DB_PORT" \
-#    -d dj6-casa \
-#    --clean \
-#    --if-exists \
-#    backups/dj6-casa.dump
-
-#echo "Datenbank wiederhergestellt."
-
-#echo "=== IN abgeschlossen ==="
+echo "Django starten"
+uv run python manage.py runserver

@@ -124,7 +124,18 @@ set -a
 source .env
 set +a
 
+#mkdir -p backups
 mkdir -p "$ICLOUD_SYNC_DIR"
+
+# 1. Git synchronisieren
+git add -A
+
+if ! git diff --cached --quiet; then
+    git commit -m "Update $(date '+%Y-%m-%d %H:%M')"
+fi
+
+git pull --rebase
+git push
 
 # 2. PostgreSQL-Dump erstellen
 echo "Erstelle PostgreSQL-Dump ..."
@@ -169,27 +180,18 @@ cd "$(dirname "$0")"
 # iCloud
 ICLOUD_SYNC_DIR="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Django-Sync"
 
-# Aktuellen Code holen
-#git pull --ff-only
-
-# Virtuelle Umgebung aktivieren
-#source .venv/bin/activate
-
-# Python-Abhängigkeiten aktualisieren
-#pip install -r requirements.txt
-
 # Umgebungsvariablen laden
 set -a
 source .env
 set +a
 
-# Datenbank wiederherstellen
-if [ ! -f backups/dj6-casa.dump ]; then
-    echo "Datenbank-Dump nicht gefunden!"
-    exit 1
-fi
-
 echo "=== Synchronisierung IN ==="
+
+# 1. Git aktualisieren
+git pull --ff-only
+
+# 2. Python-Umgebung aktivieren
+uv sync
 
 # 3. Vorhandenen Datenbank-Dump prüfen
 DUMP="$ICLOUD_SYNC_DIR/dj6-casa.dump"
@@ -249,6 +251,9 @@ pg_restore \
 echo "Datenbank erfolgreich wiederhergestellt."
 echo "Lokales Backup: $BACKUP_FILE"
 echo "=== IN abgeschlossen ==="
+
+echo "Django starten"
+uv run python manage.py runserver
 ```
 
 ## .gitignore ergänzen

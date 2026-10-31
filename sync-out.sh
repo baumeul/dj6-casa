@@ -52,7 +52,3 @@ date '+%Y-%m-%d %H:%M:%S' \
 echo "Datenbank erfolgreich exportiert."
 echo "Bitte iCloud-Synchronisierung abwarten."
 echo "=== OUT abgeschlossen ==="
-
-# pg_dump -Fc -U "$DB_USER" -h "$DB_HOST" -p "$DB_PORT" -d dj6-casa -f backups/dj6-casa.dump
-
-#echo "Datenbank gesichert."
